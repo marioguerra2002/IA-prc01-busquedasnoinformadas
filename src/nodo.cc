@@ -8,6 +8,7 @@ Nodo::Nodo(int id_, MatrizDistancia matriz_) {
       vecinos.insert(std::make_pair(i, matriz.getMatriz()[id][i]));
     }
   }
+  
 }
 void Nodo::printVecinos() const {
   for (auto it = vecinos.begin(); it != vecinos.end(); ++it) {
@@ -19,3 +20,10 @@ void Nodo::printVecinos() const {
 void Nodo::printNodo() const {
   std::cout << "Nodo: " << id << std::endl;
 }
+
+void Nodo::operator=(const Nodo& nodo) {
+  id = nodo.id;
+  vecinos = nodo.vecinos;
+  matriz = nodo.matriz;
+}
+

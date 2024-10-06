@@ -14,7 +14,7 @@ compilar:
 all: chain
 
 busqueda: main.o
-	g++ -o p01_busqueda main.cc matriz_distancia.cc
+	g++ -o p01_busqueda main.cc matriz_distancia.cc nodo.cc grafo.cc 
 
 clean:
 	rm -f *.o
