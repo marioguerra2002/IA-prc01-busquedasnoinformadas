@@ -10,7 +10,10 @@
 class MatrizDistancia {
   public:
     MatrizDistancia(int, std::vector<std::string> input);
-    void setMatrizSize(int n);
+    MatrizDistancia() {}
+    float** getMatriz() { return matriz; }
+    int getN() { return n; }
+    void printMatriz();
     
   private:
     float** matriz;

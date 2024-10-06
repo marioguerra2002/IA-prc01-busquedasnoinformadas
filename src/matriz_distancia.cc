@@ -8,19 +8,12 @@ MatrizDistancia::MatrizDistancia(int n_, std::vector<std::string> input) {
   matriz = new float*[n]; // matriz de n x n
   this->n = n; // cantidad de nodos
   std::cout << "Tamano de la matriz: " << n << std::endl;
-  // dar valores -1 a toda la matriz
+  // dar valores -1 a toda la matriz (no es realmente necesario pero por si acaso)
   for (int i = 0; i < n; ++i) {
     matriz[i] = new float[n];
     for (int j = 0; j < n; ++j) {
       matriz[i][j] = -1.0;
     }
-  }
-  // mostrar la matriz con formato
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
-      std::cout << matriz[i][j] << " ";
-    }
-    std::cout << std::endl;
   }
   auto data_iterator = input.begin();
   matriz [0][0] = 0.00; // la distancia de un nodo a si mismo es 0 (1,1)
@@ -41,16 +34,17 @@ MatrizDistancia::MatrizDistancia(int n_, std::vector<std::string> input) {
     }
   }
   // mostrar la matriz con formato
+}
+  // añadir los valores de las aristas a la matriz. Es importante destacar que va de 1-15,luego de 2-15, luego de 3-15, etc.
+
+void MatrizDistancia::printMatriz() {
   for (int i = 0; i < n; ++i) {
     for (int j = 0; j < n; ++j) {
       std::cout << std::setw(3) << std::setprecision(2) << matriz[i][j] << " ";
     }
     std::cout << std::endl;
   }
-  
 }
-  // añadir los valores de las aristas a la matriz. Es importante destacar que va de 1-15,luego de 2-15, luego de 3-15, etc.
-
   
 
 
