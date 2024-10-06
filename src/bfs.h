@@ -3,13 +3,13 @@
 #include <set>
 #include <iostream>
 #include <queue>
+#include <stack>
 
 class BFS {
   public:
-    BFS(Grafo grafo_, int nodo_inicial_);
+    BFS(Grafo& grafo_, Nodo& nodo_inicial, Nodo& nodo_final);
     BFS() {};
-    void printBFS(); // imprime el recorrido BFS
-    bool isFinalNode(); // verifica si el nodo final fue visitado
+    void printBFS(Nodo); // imprime el recorrido BFS
     std::set<Nodo> camino(); // camino desde el nodo inicial al nodo final
   private:
     Grafo grafo;
@@ -17,7 +17,8 @@ class BFS {
     Nodo nodo_final;
     Nodo nodo_actual;
     std::set<int> visitados;
-    std::set<int> no_visitados;
+    std::vector<int> padres;
+    
 
     
 };

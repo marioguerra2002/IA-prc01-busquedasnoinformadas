@@ -1,6 +1,6 @@
 #include "grafo.h"
 
-Grafo::Grafo(int n_, MatrizDistancia matriz_) {
+Grafo::Grafo(int n_, MatrizDistancia matriz_, Nodo nodo_raiz_, Nodo nodo_final_) {
   n = n_;
   matriz = matriz_;
   for (int i = 0; i < n; ++i) {
@@ -8,12 +8,15 @@ Grafo::Grafo(int n_, MatrizDistancia matriz_) {
 
     nodos.push_back(nodo);
   }
-  nodo_raiz = nodos[0];
-  setPadres();
+  nodo_raiz = nodo_raiz_;
+  nodo_final = nodo_final_;
+  // setPadres();
 }
 void Grafo::printGrafo() {
   for (int i = 0; i < n; ++i) {
+    nodos[i].printNodo();
     nodos[i].printVecinos();
+    std::cout << "\n";
   }
 }
 
@@ -44,18 +47,5 @@ void Grafo::generarDot(const std::string& nombre_archivo) {
     archivo << "}\n";
     archivo.close();
 }
-void Grafo::setPadres() {
-  for (int i = 0; i < n; ++i) {
-    // si el nodo es el raíz, es su propio padre
-    if (nodos[i].getId() == nodo_raiz.getId()) {
-      nodos[i].setPadre(&nodos[i]);
-      continue; // saltar a la siguiente iteración
-    }
-    // al ser un grafo no dirigido, el padre de un nodo es su vecino
-    for (const auto& vecino : nodos[i].getVecinos()) { // recorrer los vecinos del nodo
-      if (nodos[vecino.first].getId() == i) { // si el vecino es el padre
-        nodos[vecino.first].setPadre(&nodos[i]); // asignar el padre
-      }
-    }
-  }
-}
+
+

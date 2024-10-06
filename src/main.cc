@@ -1,6 +1,5 @@
 #include "matriz_distancia.h"
-
-#include "grafo.h"
+#include "bfs.h"
 
 #include <iostream>
 #include <fstream>
@@ -55,11 +54,15 @@ int main(int argc, char* argv[]) {
     std::cout << "\n";
     Nodo nodoinicial(nombre_nodo_inicial, matriz);
     Nodo nodofinal(nombre_nodo_final, matriz);
+
     nodoinicial.printVecinos();
     nodofinal.printVecinos();
     std::cout << "\n";
-    Grafo grafo(n, matriz);
+    Grafo grafo(n, matriz, nodoinicial, nodofinal);
     grafo.printGrafo();
     grafo.generarDot(argv[4]);
+     
+    BFS bfs(grafo, nodoinicial, nodofinal);
+
   }
 }

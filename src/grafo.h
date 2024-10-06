@@ -4,15 +4,15 @@
 
 class Grafo {
   public:
-    Grafo(int, MatrizDistancia);
+    Grafo(int, MatrizDistancia, Nodo, Nodo);
     Grafo() {};
     void printGrafo();
     void generarDot(const std::string&);
     std::vector<Nodo> getNodos() { return nodos; }
-    void setPadres();
   private:
     std::vector<Nodo> nodos;
     MatrizDistancia matriz;
     int n;
     Nodo nodo_raiz;
+    Nodo nodo_final;
 };
