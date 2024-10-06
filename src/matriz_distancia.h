@@ -9,12 +9,12 @@
 
 class MatrizDistancia {
   public:
-    MatrizDistancia(int n);
-    void setDistancia(int i, int j, int distancia);
-    int getDistancia(int i, int j) const;
-    int getN() const;
-    void print() const;
+    MatrizDistancia(int, std::vector<std::string> input);
+    void setMatrizSize(int n);
+    
   private:
-    std::vector<std::vector<int>> matriz;
+    float** matriz;
     int n;
 };
+
+#endif // MATRIZ_DISTANCIA_H

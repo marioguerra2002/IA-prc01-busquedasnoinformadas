@@ -1,6 +1,7 @@
 # Main que contiene la lógica de la aplicación y lectura de archivos.
 import sys
 from matriz import matriz
+import numpy as np
 def main():
   datos = []
   if len(sys.argv) != 2:

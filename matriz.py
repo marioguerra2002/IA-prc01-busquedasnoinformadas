@@ -1,3 +1,4 @@
+import numpy as np
 def matriz(input, size):
   #se le pasa de entrada ya las lineas del archivo
   #se guarda en una matriz
@@ -26,7 +27,9 @@ def matriz(input, size):
     # iterador_columnas = iterador_filas # para que empiece en la siguiente fila
   # for linea in input:
   #   for i in range(size):
-  print(datos)
+  #print(datos)
+  matriz = np.array(datos)
+  print(matriz)
       
     
   #   datos.append(float(linea.strip()))
