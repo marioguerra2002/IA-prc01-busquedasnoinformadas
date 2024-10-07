@@ -8,10 +8,6 @@ DFS::DFS(Grafo& grafo_, Nodo& nodo_inicial_, Nodo& nodo_final_) {
   // usaremos una pila
   Nodo nodo_inicial = nodo_inicial_;
   Nodo nodo_final = nodo_final_;
-  if (nodo_inicial.getId() == nodo_final.getId()) {
-    printCaso1nodo(nodo_final, nodo_inicial);
-    return;
-  }
   padres.resize(grafo_.getNodos().size(), -1);
   padres[nodo_inicial.getId()] = nodo_inicial.getId();
   // std::cout << "Padre nodo inicial: " << padres[nodo_inicial.getId()] << std::endl;
@@ -106,20 +102,3 @@ void DFS::Iteracion(Nodo nodo_actual, std::stack<Nodo>& a_inspeccionar, int iter
     hh << "_________________________________________" << std::endl;
     
 }
-
-std::string DFS::printCaso1nodo(Nodo nodofinal, Nodo nodo_inicial) {
-    hh << "Numero de nodos: 1" << std::endl;
-    hh << "Numero de aristas: 1" << std::endl;
-    hh << "Nodo inicial: " << nodo_inicial.getId() << std::endl;
-    hh << "Nodo final: " << nodofinal.getId() << std::endl;
-    hh << "_______________________________________" << std::endl;
-    hh << "Iteracion: 0" << std::endl;
-    hh << "Nodos generados: " << nodo_inicial.getId() << std::endl;
-    hh << "Nodos inspeccionados: " << nodo_inicial.getId() << std::endl;
-    hh << "_______________________________________" << std::endl;
-    hh << "Camino hasta el nodo final: " << nodo_inicial.getId() << " -> " << nodofinal.getId() << std::endl;
-    hh << "Coste total: 0.00" << std::endl;
-
-    return hh.str();
-}
-

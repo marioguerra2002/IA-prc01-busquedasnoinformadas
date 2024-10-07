@@ -5,10 +5,6 @@ BFS::BFS(Grafo& grafo_, Nodo& nodo_inicial_, Nodo& nodo_final_) {
   std::stringstream ss;
   Nodo nodo_inicial = nodo_inicial_;
   Nodo nodo_final = nodo_final_;
-  if (nodo_inicial.getId() == nodo_final.getId()) {
-    printCaso1nodo(nodo_final, nodo_inicial);
-    return;
-  }
   padres.resize(grafo_.getNodos().size(), -1);
   padres[nodo_inicial.getId()] = nodo_inicial.getId();
 
@@ -124,19 +120,4 @@ void BFS::Iteracion(Nodo nodo_actual, std::queue<Nodo>& a_inspeccionar, int iter
   ss << std::endl;
   ss << "_________________________________________" << std::endl;
   
-}
-
-std::string BFS::printCaso1nodo(Nodo nodofinal, Nodo nodo_inicial) {
-  ss << "Numero de nodos: 1" << std::endl;
-  ss << "Numero de aristas: 1" << std::endl; // solo hay una arista que es la del nodo a si mismo
-  ss << "Nodo inicial: " << nodo_inicial.getId() << std::endl;
-  ss << "Nodo final: " << nodofinal.getId() << std::endl;
-  ss << "_______________________________________" << std::endl;
-  ss << "Iteracion: 0" << std::endl;
-  ss << "Nodos generados: " << nodo_inicial.getId() << std::endl;
-  ss << "Nodos inspeccionados: " << nodo_inicial.getId() << std::endl;
-  ss << "_______________________________________" << std::endl;
-  ss << "Camino hasta el nodo final: " << nodo_inicial.getId() << " -> " << nodofinal.getId() << std::endl;
-  ss << "Coste total: 0.00" << std::endl;
-  return ss.str();
 }

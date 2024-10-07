@@ -13,7 +13,6 @@ class BFS {
     std::string printBFS(Nodo, Nodo); // imprime el recorrido BFS
     void cabezera(Nodo, Nodo);
     void Iteracion(Nodo, std::queue<Nodo>&, int);
-    std::string printCaso1nodo(Nodo, Nodo);
 
   
   private:

@@ -12,7 +12,6 @@ class DFS {
     std::string printDFS(Nodo, Nodo); // imprime el recorrido DFS
     void cabezera(Nodo, Nodo);
     void Iteracion(Nodo, std::stack<Nodo>&, int);
-    std::string printCaso1nodo(Nodo, Nodo);
   private:
     Grafo grafo;
     Nodo nodo_inicial;

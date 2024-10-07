@@ -1,18 +1,18 @@
 Numero de nodos: 15
 Numero de aristas: 38
-Nodo inicial: 2
-Nodo final: 8
+Nodo inicial: 0
+Nodo final: 9
 _________________________________________
 Iteracion: 0
-Nodos generados: 0 1 3 10 
-Nodos inspeccionados: 0 1 3 10 
+Nodos generados: 1 2 
+Nodos inspeccionados: 1 2 
 _________________________________________
 Iteracion: 1
-Nodos generados: 1 2 
-Nodos inspeccionados: 1 3 10 
+Nodos generados: 0 2 3 
+Nodos inspeccionados: 2 3 
 _________________________________________
 Iteracion: 2
-Nodos generados: 0 2 3 
+Nodos generados: 0 1 3 10 
 Nodos inspeccionados: 3 10 
 _________________________________________
 Iteracion: 3
@@ -39,8 +39,12 @@ Iteracion: 8
 Nodos generados: 5 7 14 
 Nodos inspeccionados: 8 9 12 7 14 
 _________________________________________
-Camino hasta el nodo final: 2 -> 3 -> 5 -> 8
-Coste total: 19
-Camino hasta el nodo final: 8
+Iteracion: 9
+Nodos generados: 5 14 
+Nodos inspeccionados: 9 12 7 14 
+_________________________________________
+Camino hasta el nodo final: 0 -> 1 -> 3 -> 5 -> 9
+Coste total: 33
+Camino hasta el nodo final: 9
 Coste total: 0
 

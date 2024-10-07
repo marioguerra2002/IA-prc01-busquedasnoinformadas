@@ -56,6 +56,19 @@ int main(int argc, char* argv[]) {
     // nodoinicial.printVecinos();
     // nodofinal.printVecinos();
     // std::cout << "\n";
+    if (nombre_nodo_inicial == nombre_nodo_final) {
+      salida << "Numero de nodos: 1" << std::endl;
+      salida << "Numero de aristas: 1" << std::endl;
+      salida << "Nodo inicial: " << nombre_nodo_inicial << std::endl;
+      salida << "Nodo final: " << nombre_nodo_final << std::endl;
+      salida << "_______________________________________" << std::endl;
+      salida << "Iteracion: 0" << std::endl;
+      salida << "Nodos generados: " << nombre_nodo_inicial << std::endl;
+      salida << "_____________________________________" << std::endl;
+      salida << "Camino hasta el nodo final: " << nombre_nodo_inicial << " -> " << nombre_nodo_final << std::endl;
+      salida << "Coste total: 0.00" << std::endl;
+      return 0;
+    }
     Grafo grafo(n, matriz, nodoinicial, nodofinal);
     //grafo.generarDot(argv[4]);
     // grafo.printGrafo();
