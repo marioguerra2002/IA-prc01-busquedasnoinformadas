@@ -37,7 +37,6 @@ int main(int argc, char* argv[]) {
       input.clear();
     }
     auxiliar.clear();
-    std::cout << "\n";
     // for (unsigned i = 0; i < input_vector.size(); ++i) {
     //   std::cout << input_vector[i] << std::endl;
     // }
@@ -60,12 +59,22 @@ int main(int argc, char* argv[]) {
     Grafo grafo(n, matriz, nodoinicial, nodofinal);
     //grafo.generarDot(argv[4]);
     // grafo.printGrafo();
-     
-    BFS bfs(grafo, nodoinicial, nodofinal);
-    DFS dfs(grafo, nodoinicial, nodofinal);
+    std::cout << "Introduzca si quiere la búsqueda por amplitud (BFS) o profundidad (DFS): " << std::endl;
+    std::string in;
+    std::cin >> in;
+    if (in == "BFS" || in == "bfs") {
+      BFS bfs(grafo, nodoinicial, nodofinal);
+      salida << bfs.printBFS(nodofinal, nodoinicial) << std::endl;
+    } else if (in == "DFS" || in == "dfs") {
+      DFS dfs(grafo, nodoinicial, nodofinal);
+      salida << dfs.printDFS(nodofinal, nodoinicial) << std::endl;
+    } else {
+      std::cerr << "Introduzca una opción válida y vuelva a intentarlo" << std::endl;
+      return 1;
+    }
+    //
 
     // meter ss en archivo de salida
-    salida << bfs.printBFS(nodofinal, nodoinicial) << std::endl;
 
 
   }

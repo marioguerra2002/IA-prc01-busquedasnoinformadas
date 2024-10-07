@@ -7,7 +7,6 @@ MatrizDistancia::MatrizDistancia(int n_, std::vector<std::string> input) {
   n = n_;
   matriz = new float*[n]; // matriz de n x n
   this->n = n; // cantidad de nodos
-  std::cout << "Tamano de la matriz: " << n << std::endl;
   // dar valores -1 a toda la matriz (no es realmente necesario pero por si acaso)
   for (int i = 0; i < n; ++i) {
     matriz[i] = new float[n];

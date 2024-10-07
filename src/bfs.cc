@@ -34,15 +34,11 @@ BFS::BFS(Grafo& grafo_, Nodo& nodo_inicial_, Nodo& nodo_final_) {
     nodo_actual = a_inspeccionar.front();
     // std::cout << "Nodo actual: " << nodo_actual.getId() << std::endl;
     a_inspeccionar.pop();
-    //std::cout << "Vecinos del nodo actual: " << std::endl;
-    //nodo_actual.printVecinos();
-    // imprimir cola
 
     if (nodo_actual == nodo_final) {
       printBFS(nodo_final, nodo_inicial);
       break;
     }
-    std::cout << "Iteracion: " << iteracion << std::endl;
     ss << "Iteracion: " << iteracion << std::endl;
     for (const auto& vecino : nodo_actual.getVecinos()) {
       // si el vecino no ha sido visitado 
@@ -94,7 +90,6 @@ std::string BFS::printBFS(Nodo nodofinal, Nodo nodo_inicial) {
   }
   ss << "Camino hasta el nodo final: ";
   while (!camino.empty()) {
-    std::cout << camino.top() << " -> ";
     ss << camino.top() << " -> ";
     camino.pop();
   }
