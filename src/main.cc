@@ -1,5 +1,5 @@
-#include "matriz_distancia.h"
-#include "bfs.h"
+
+#include "dfs.h"
 
 #include <iostream>
 #include <fstream>
@@ -43,26 +43,30 @@ int main(int argc, char* argv[]) {
     // }
     // el primer elemento del vector es el numero de nodos
     int n = std::stoi(input_vector[0]);
-    std::cout << "Numero de nodos: " << n << std::endl;
+    // std::cout << "Numero de nodos: " << n << std::endl;
     // borrar el primer elemento del vector
     input_vector.erase(input_vector.begin());
     // for (unsigned i = 0; i < input_vector.size(); ++i) {
     //   std::cout << input_vector[i] << std::endl;
     // }
     MatrizDistancia matriz(n, input_vector);
-    matriz.printMatriz();
-    std::cout << "\n";
+    // matriz.printMatriz();
     Nodo nodoinicial(nombre_nodo_inicial, matriz);
     Nodo nodofinal(nombre_nodo_final, matriz);
 
-    nodoinicial.printVecinos();
-    nodofinal.printVecinos();
-    std::cout << "\n";
+    // nodoinicial.printVecinos();
+    // nodofinal.printVecinos();
+    // std::cout << "\n";
     Grafo grafo(n, matriz, nodoinicial, nodofinal);
-    grafo.printGrafo();
-    grafo.generarDot(argv[4]);
+    //grafo.generarDot(argv[4]);
+    // grafo.printGrafo();
      
     BFS bfs(grafo, nodoinicial, nodofinal);
+    DFS dfs(grafo, nodoinicial, nodofinal);
+
+    // meter ss en archivo de salida
+    salida << bfs.printBFS(nodofinal, nodoinicial) << std::endl;
+
 
   }
 }

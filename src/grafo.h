@@ -9,6 +9,7 @@ class Grafo {
     void printGrafo();
     void generarDot(const std::string&);
     std::vector<Nodo> getNodos() { return nodos; }
+    int getNumeroAristas();
   private:
     std::vector<Nodo> nodos;
     MatrizDistancia matriz;

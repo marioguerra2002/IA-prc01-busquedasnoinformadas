@@ -20,6 +20,14 @@ void Grafo::printGrafo() {
   }
 }
 
+int Grafo::getNumeroAristas() {
+  int aristas = 0;
+  for (int i = 0; i < n; ++i) {
+    aristas += nodos[i].getVecinos().size();
+  }
+  return aristas;
+}
+
 void Grafo::generarDot(const std::string& nombre_archivo) {
     std::ofstream archivo(nombre_archivo);
     if (!archivo) {
